@@ -1,4 +1,4 @@
-function docker
+function docker -w docker -d 'A self-sufficient runtime for containers'
   if not set -q DOCKER_MACHINE_NAME
     set -q DOCKER_MACHINE_DEFAULT
       or set -l DOCKER_MACHINE_DEFAULT default
