@@ -5,10 +5,6 @@ Plugin to integrate [Docker Machine][docker-machine] for [Oh My Fish][omf].
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 
-<br/>
-
-Integrate access to [Docker Machine][docker-machine] in your shell whenever you run `docker`. Don't let using Docker commands be tedious if you are on OS X or Windows!
-
 
 ## Install
 Installation with [Oh My Fish][omf]:
@@ -17,14 +13,17 @@ Installation with [Oh My Fish][omf]:
 
 
 ## Usage
-To access the default Docker machine, simply run `docker` and it will automatically connect to the default Docker machine. You can specify the default machine name by overriding `$DOCKER_MACHINE_DEFAULT`:
+To set the current Docker machine, use the `use` subcommand:
 
-    $ set -gx DOCKER_MACHINE_DEFAULT dev
-    $ docker info
-    $ echo $DOCKER_MACHINE_NAME
-    dev
+    $ docker-machine use mymachine
+    $ docker-machine active
+    mymachine
 
-The default machine name is `default`.
+To switch back to the local machine, you can use the `unset` subcommand:
+
+    $ docker-machine unset
+    $ docker-machine active
+    No active host found
 
 See the [Docker Machine][docker-machine] documentation for full details on how to use `docker-machine`.
 
